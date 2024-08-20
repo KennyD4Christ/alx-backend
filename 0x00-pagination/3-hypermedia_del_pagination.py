@@ -51,9 +51,9 @@ class Server:
                   the current page size, and the data for the current page.
         """
         assert index is not None and \
-               0 <= index < len(self.indexed_dataset()), "Index out of range."
+            0 <= index < len(self.indexed_dataset()), "Index out of range."
         assert isinstance(page_size, int) and \
-               page_size > 0, "Page size must be a positive integer."
+            page_size > 0, "Page size must be a positive integer."
 
         indexed_data = self.indexed_dataset()
         data = []
