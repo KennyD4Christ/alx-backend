@@ -61,9 +61,9 @@ class Server:
                         is out of bounds.
         """
         assert isinstance(page, int) and \
-               page > 0, "Page number must be a positive integer."
+            page > 0, "Page number must be a positive integer."
         assert isinstance(page_size, int) and \
-               page_size > 0, "Page size must be a positive integer."
+            page_size > 0, "Page size must be a positive integer."
 
         start_index, end_index = index_range(page, page_size)
         dataset = self.dataset()
