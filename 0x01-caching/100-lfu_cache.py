@@ -29,9 +29,12 @@ class LFUCache(BaseCaching):
             else:
                 if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                     # Find the least frequently used item
-                    lfu_keys = [k for k, v in self.frequency.items() if \
-                        v == min(self.frequency.values())]
-                    # If there is a tie in frequency, find the LRU among the LFU
+                    lfu_keys = [
+                        k for k, v in self.frequency.items()
+                        if v == min(self.frequency.values())
+                    ]
+                    # If there is a tie in frequency, find the LRU
+                    # among the LFU.
                     if len(lfu_keys) > 1:
                         lfu_lru_key = next(iter(self.usage_order))
                         for k in lfu_keys:
