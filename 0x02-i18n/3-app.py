@@ -6,6 +6,10 @@ Flask app with Babel for internationalization, including message translations
 from flask import Flask, render_template, request
 from flask_babel import Babel, gettext as _
 
+# Documentation for gettext alias (_)
+_: str = _
+"""Alias for the gettext function, used for translating text."""
+
 
 class Config:
     """
